@@ -620,6 +620,102 @@ textarea {
   fill: currentColor;
 }
 
+/* -----Форма розсилки----- */
+
+.form-subscribe {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+
+  margin-right: 0;
+  margin-left: auto;
+  min-width: 570px;
+}
+
+.field-subscribe {
+  display: flex;
+  flex-direction: column;
+}
+
+.label-subscribe {
+  margin-bottom: 20px;
+
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: var(--primary-white-color);
+}
+
+.input-subscribe {
+  display: block;
+  padding: 15px 16px;
+  margin-right: 12px;
+
+  max-width: 358px;
+  min-height: 50px;
+
+  color: var(--primary-white-color);
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+}
+
+.input-subscribe::placeholder {
+  font-size: 16px;
+  line-height: 1.25;
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.03em;
+
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* .input-subscribe:focus {
+  border: 1px solid var(--accent-color);
+} */
+
+.btn-subscribe {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 200px;
+  height: 50px;
+
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+
+  letter-spacing: 0.06em;
+
+  color: var(--primary-white-color);
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: transparent;
+  border-radius: 4px;
+
+  transition: background-color var(--duration) var(--timing-function);
+}
+
+.btn-subscribe:hover,
+.btn-subscribe:focus {
+  background-color: var(--focus-btn-color);
+}
+
+.subscribe-icon {
+  margin-left: 10px;
+  fill: currentColor;
+}
+
 /* ----------Портфолио---------- */
 
 .project-section {
@@ -801,6 +897,7 @@ textarea {
   top: 50%;
   left: 50%;
 
+  padding: 40px;
   min-width: 528px;
   min-height: 581px;
 
@@ -846,7 +943,6 @@ textarea {
 .form {
   width: 100%;
   height: 100%;
-  padding: 40px;
 }
 
 .form-text {
@@ -883,7 +979,7 @@ textarea {
   padding-bottom: 11px;
   margin-bottom: 10px;
 
-  width: 448px;
+  width: 100%;
   height: 40px;
 
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -909,15 +1005,17 @@ textarea {
 }
 
 .check {
-  position: relative;
+  text-align: center;
+  /* position: relative; */
   display: block;
 }
 
 .check-text {
-  margin: 30px;
+  display: inline-flex;
+
+  margin-bottom: 30px;
   font-size: 14px;
   line-height: 1.71;
-  text-align: center;
 
   letter-spacing: 0.03em;
 
@@ -926,8 +1024,9 @@ textarea {
 
 .check-link {
   position: relative;
-  display: inline-flex;
+  display: inline-block;
 
+  margin-left: 5px;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
@@ -948,12 +1047,16 @@ textarea {
 }
 
 .check-input {
-  position: absolute;
+  /* position: absolute; */
 }
 
 .form-btn {
-  display: block;
-  padding: 10px 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 200px;
+  height: 50px;
   margin-left: auto;
   margin-right: auto;
 
@@ -961,9 +1064,6 @@ textarea {
   font-size: 16px;
   line-height: 1.88;
 
-  display: flex;
-  align-items: center;
-  text-align: center;
   letter-spacing: 0.06em;
 
   color: var(--primary-white-color);
