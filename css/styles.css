@@ -511,7 +511,6 @@ textarea {
   margin-left: auto;
   margin-right: auto;
 
-  /* max-width: 1600px; */
   background-color: var(--background-color);
 }
 
@@ -659,6 +658,8 @@ textarea {
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
+
+  transition: border var(--duration) var(--timing-function);
 }
 
 .input-subscribe::placeholder {
@@ -670,9 +671,10 @@ textarea {
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* .input-subscribe:focus {
+.input-subscribe:focus {
+  outline: none;
   border: 1px solid var(--accent-color);
-} */
+}
 
 .btn-subscribe {
   position: absolute;
@@ -698,6 +700,7 @@ textarea {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border: transparent;
   border-radius: 4px;
+  cursor: pointer;
 
   transition: background-color var(--duration) var(--timing-function);
 }
@@ -922,6 +925,7 @@ textarea {
   background: var(--primary-white-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+  cursor: pointer;
 
   transition: color var(--duration) var(--timing-function);
 }
@@ -981,6 +985,7 @@ textarea {
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  transition: border var(--duration) var(--timing-function);
 }
 
 .form-input:focus {
@@ -994,11 +999,18 @@ textarea {
   bottom: 11px;
   display: inline-flex;
   fill: currentColor;
+
+  transition: color var(--duration) var(--timing-function);
 }
 
-.form-input:focus + .form-icon {
+/* .form-input:focus + .form-icon {
+  color: var(--accent-color);
+} */
+
+.form-field:focus-within .form-icon {
   color: var(--accent-color);
 }
+
 .form-comment {
   padding: 12px 16px;
   margin-bottom: 20px;
@@ -1007,6 +1019,7 @@ textarea {
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  transition: border var(--duration) var(--timing-function);
 }
 
 .form-comment::placeholder {
@@ -1023,15 +1036,44 @@ textarea {
 }
 
 .check {
-  /* position: relative; */
-  display: block;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.check-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+}
+
+.check-icon {
+  display: inline-block;
+  margin-right: 8px;
+  width: 16px;
+  height: 15px;
+
+  border: 2px solid var(--primary-text-color);
+  border-radius: 2px;
+
+  transition: background-color var(--duration) var(--timing-function),
+    border-color var(--duration) var(--timing-function),
+    background-image var(--duration) var(--timing-function);
+}
+
+.check-input:checked + .check-icon {
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+  background-image: url(../images/icon_check.svg);
+  background-size: contain;
+  background-origin: border-box;
 }
 
 .check-text {
   display: inline-flex;
 
-  margin-bottom: 30px;
   font-size: 14px;
   line-height: 1.71;
 
@@ -1043,14 +1085,18 @@ textarea {
 .check-link {
   position: relative;
   display: inline-block;
-
-  margin-bottom: 30px;
+  margin-left: 5px;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
-  text-decoration: none;
 
   color: var(--accent-color);
+  transition: color var(--duration) var(--timing-function);
+}
+
+.check-link:hover,
+.check-link:focus {
+  color: var(--focus-btn-color);
 }
 
 .check-link::after {
@@ -1062,10 +1108,6 @@ textarea {
   border-bottom: 1px solid var(--accent-color);
 
   color: var(--accent-color);
-}
-
-.check-input {
-  /* position: absolute; */
 }
 
 .form-btn {
@@ -1085,8 +1127,16 @@ textarea {
   letter-spacing: 0.06em;
 
   color: var(--primary-white-color);
-  background: var(--accent-color);
+  background-color: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border: transparent;
+  cursor: pointer;
+
+  transition: background-color var(--duration) var(--timing-function);
+}
+
+.form-btn:hover,
+.form-btn :focus {
+  background-color: var(--focus-btn-color);
 }
